@@ -126,7 +126,7 @@ describe('note routes', () => {
         });
     });
 
-    it('detes a not via Delete', () => {
+    it('deletes a not via Delete', () => {
         return Note.create({
             title: 'Note 1',
             body: 'my body',
@@ -137,7 +137,7 @@ describe('note routes', () => {
                 .delete(`/api/v1/notes/${note.id}`)
         })
         .then(res => {
-            expect(res.body).toEqual ({
+            expect(res.body).toEqual({
                 _id: expect.any(String),
                 title: 'Note 1',
                 body: 'my body',
